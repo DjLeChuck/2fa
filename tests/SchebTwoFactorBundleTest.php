@@ -28,6 +28,13 @@ class SchebTwoFactorBundleTest extends TestCase
             $this->isInstanceOf(MailerCompilerPass::class),
         ];
 
+        // Expect parameter to be read
+        $containerBuilder
+            ->expects($this->any())
+            ->method('getParameter')
+            ->with('scheb_two_factor.authenticator_priority')
+            ->willReturn(0);
+
         // Expect compiler pass to be added
         $containerBuilder
             ->expects($this->exactly(count($compilerPasses)))

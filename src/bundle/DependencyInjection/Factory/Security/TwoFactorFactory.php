@@ -57,8 +57,10 @@ class TwoFactorFactory implements FirewallListenerFactoryInterface, Authenticato
     public const KERNEL_ACCESS_LISTENER_DEFINITION_ID = 'scheb_two_factor.security.access_listener';
     public const FORM_LISTENER_DEFINITION_ID = 'scheb_two_factor.security.form_listener';
 
-    public function __construct(private readonly TwoFactorServicesFactory $twoFactorServicesFactory)
-    {
+    public function __construct(
+        private readonly ContainerBuilder $container,
+        private readonly TwoFactorServicesFactory $twoFactorServicesFactory,
+    ) {
     }
 
     public function addConfiguration(NodeDefinition $builder): void
@@ -169,6 +171,6 @@ class TwoFactorFactory implements FirewallListenerFactoryInterface, Authenticato
 
     public function getPriority(): int
     {
-        return 0;
+        return $this->container->getParameter('scheb_two_factor.authenticator_priority');
     }
 }

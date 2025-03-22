@@ -30,7 +30,7 @@ class SchebTwoFactorBundle extends Bundle
         $extension = $container->getExtension('security');
         assert($extension instanceof SecurityExtension);
 
-        $securityFactory = new TwoFactorFactory(new TwoFactorServicesFactory());
+        $securityFactory = new TwoFactorFactory($container, new TwoFactorServicesFactory());
         $extension->addAuthenticatorFactory($securityFactory);
     }
 }

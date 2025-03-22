@@ -35,7 +35,7 @@ class TwoFactorFactoryTest extends TestCase
     public function setUp(): void
     {
         $this->servicesFactory = $this->createMock(TwoFactorServicesFactory::class);
-        $this->factory = new TwoFactorFactory($this->servicesFactory);
+        $this->factory = new TwoFactorFactory($this->servicesFactory, 0);
         $this->container = new ContainerBuilder();
         $this->container->setDefinition('scheb_two_factor.firewall_context', new Definition());
     }

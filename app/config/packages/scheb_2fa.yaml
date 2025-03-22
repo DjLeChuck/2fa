@@ -52,6 +52,8 @@ scheb_two_factor:
     security_tokens:
         - Symfony\Component\Security\Core\Authentication\Token\UsernamePasswordToken
 
+    authenticator_priority: -50
+
     # A list of IP addresses, which will not trigger two-factor authentication
     ip_whitelist:
        - 127.0.0.2 # Used for testing

@@ -78,6 +78,9 @@ Bundle Configuration
            - Symfony\Component\Security\Core\Authentication\Token\UsernamePasswordToken
            - Symfony\Component\Security\Http\Authenticator\Token\PostAuthenticationToken
 
+       # Priority of the TwoFactorAuthenticator within Symfony's firewall
+       authenticator_priority: 0
+
        # A list of IP addresses or netmasks, which will not trigger two-factor authentication.
        # Supports IPv4, IPv6 and IP subnet masks.
        ip_whitelist:

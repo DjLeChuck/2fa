@@ -31,6 +31,7 @@ class SchebTwoFactorExtension extends Extension
         $container->setParameter('scheb_two_factor.model_manager_name', $config['model_manager_name']);
         $container->setParameter('scheb_two_factor.security_tokens', $config['security_tokens']);
         $container->setParameter('scheb_two_factor.ip_whitelist', $config['ip_whitelist']);
+        $container->setParameter('scheb_two_factor.authenticator_priority', $config['authenticator_priority']);
 
         $loader = new Loader\PhpFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('security.php');

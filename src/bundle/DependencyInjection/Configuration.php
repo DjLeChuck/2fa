@@ -55,6 +55,7 @@ class Configuration implements ConfigurationInterface
                     ->prototype('scalar')->end()
                 ->end()
                 ->scalarNode('ip_whitelist_provider')->defaultValue('scheb_two_factor.default_ip_whitelist_provider')->end()
+                ->scalarNode('authenticator_priority')->defaultValue(0)->end()
                 ->scalarNode('two_factor_token_factory')->defaultValue('scheb_two_factor.default_token_factory')->end()
                 ->scalarNode('two_factor_provider_decider')->defaultValue('scheb_two_factor.default_provider_decider')->end()
                 ->scalarNode('two_factor_condition')->defaultNull()->end()
